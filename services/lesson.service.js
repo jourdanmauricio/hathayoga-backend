@@ -1,13 +1,8 @@
 const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
-class LessonsService {
-  constructor() {
-    this.lessons = [
-      { id: 1, days: 'Lunes, Miercoles, Viernes', hours: '14 a 15 hs' },
-      { id: 2, days: 'Lunes, Miercoles, Viernes', hours: '17 a 18 hs' },
-    ];
-  }
+class LessonService {
+  constructor() {}
 
   async create(data) {
     const newLesson = await models.Lesson.create(data);
@@ -40,4 +35,4 @@ class LessonsService {
   }
 }
 
-module.exports = LessonsService;
+module.exports = LessonService;
