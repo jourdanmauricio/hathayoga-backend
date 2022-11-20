@@ -1,5 +1,7 @@
 const express = require('express');
+const passport = require('passport');
 
+const { checkAdminRole } = require('./../middlewares/auth.handler');
 const CommentService = require('../services/comment.service');
 
 const validatorHandler = require('../middlewares/validator.handler');
@@ -11,14 +13,19 @@ const {
 const router = express.Router();
 const commentService = new CommentService();
 
-router.get('/', async (req, res, next) => {
-  try {
-    const comments = await commentService.find();
-    res.status(200).json(comments);
-  } catch (error) {
-    next(error);
+router.get(
+  '/',
+  passport.authenticate('jwt', { session: false }),
+  checkAdminRole,
+  async (req, res, next) => {
+    try {
+      const comments = await commentService.find();
+      res.status(200).json(comments);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 router.post(
   '/',
