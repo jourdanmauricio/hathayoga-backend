@@ -23,10 +23,14 @@ router.get('/', async (req, res, next) => {
 router.post(
   '/',
   validatorHandler(createCommentSchema, 'body'),
-  async (req, res) => {
-    const body = req.body;
-    const newComment = await commentService.create(body);
-    res.status(201).json(newComment);
+  async (req, res, next) => {
+    try {
+      const body = req.body;
+      const newComment = await commentService.create(body);
+      res.status(201).json(newComment);
+    } catch (error) {
+      next(error);
+    }
   }
 );
 

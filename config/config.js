@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const config = {
+  adminPass: process.env.ADMIN_PASS,
   env: process.env.NODE_ENV || 'dev',
   isProd: process.env.NODE_ENV === 'production',
   port: process.env.PORT || 3000,
