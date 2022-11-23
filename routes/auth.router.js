@@ -16,11 +16,11 @@ router.post(
         sub: user.id,
         role: user.role,
       };
-      // const token = jwt.sign(payload, config.jwtSecret);
-      user.token = jwt.sign(payload, config.jwtSecret);
+      const token = jwt.sign(payload, config.jwtSecret);
+      const userResponse = JSON.parse(JSON.stringify(user));
+      userResponse.token = token;
       res.json({
-        user,
-        //token,
+        user: userResponse,
       });
     } catch (error) {
       next(error);
