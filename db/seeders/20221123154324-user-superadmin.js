@@ -4,14 +4,14 @@ const { config } = require('./../../config/config');
 
 module.exports = {
   async up(queryInterface) {
-    const passHash = await bcrypt.hash(config.adminPass, 10);
+    const passHash = await bcrypt.hash(config.superadminPass, 10);
     return queryInterface.bulkInsert(
       'users',
       [
         {
-          email: config.adminEmail,
+          email: config.superadminEmail,
           password: passHash,
-          role: config.adminRole,
+          role: config.superadminRole,
           created_at: new Date(),
           updated_at: new Date(),
         },

@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const config = {
-  adminPass: process.env.ADMIN_PASS,
   env: process.env.NODE_ENV || 'dev',
   isProd: process.env.NODE_ENV === 'production',
   port: process.env.PORT || 3000,
@@ -14,6 +13,13 @@ const config = {
   dbUrl: process.env.DATABASE_URL,
   apiKey: process.env.API_KEY,
   jwtSecret: process.env.JWT_SECRET,
+
+  adminEmail: process.env.ADMIN_EMAIL,
+  adminPass: process.env.ADMIN_PASS,
+  adminRole: process.env.ADMIN_ROLE,
+  superadminEmail: process.env.SUPERADMIN_EMAIL,
+  superadminPass: process.env.SUPERADMIN_PASS,
+  superadminRole: process.env.SUPERADMIN_ROLE,
 };
 
 module.exports = { config };
