@@ -18,7 +18,7 @@ const LessonSchema = {
     type: DataTypes.STRING,
   },
   studentQuantity: {
-    allowNull: false,
+    allowNull: true,
     type: DataTypes.STRING,
     field: 'student_quantity',
   },
