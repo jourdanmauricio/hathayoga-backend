@@ -2,17 +2,17 @@ const Joi = require('joi');
 
 const id = Joi.number().integer();
 const name = Joi.string().max(255);
-const email = Joi.string().email();
-const phone = Joi.string();
-const address = Joi.string();
-const birthday = Joi.date();
-const age = Joi.number().positive();
-const dni = Joi.string().max(20);
-const certificate = Joi.boolean();
-const status = Joi.string();
-const start = Joi.date();
-const end = Joi.date();
-const comment = Joi.string().max(255);
+const email = Joi.string().email().allow(null, '');
+const phone = Joi.string().allow(null, '');
+const address = Joi.string().allow(null, '');
+const birthday = Joi.date().allow(null, '');
+const age = Joi.number().positive().allow(null, '');
+const dni = Joi.string().max(20).allow(null, '');
+const certificate = Joi.boolean().allow(null, '');
+const status = Joi.string().allow(null, '');
+const start = Joi.date().allow(null, '');
+const end = Joi.date().allow(null, '');
+const comment = Joi.string().max(255).allow(null, '');
 
 const getCustomerSchema = Joi.object({
   id: id.required(),
