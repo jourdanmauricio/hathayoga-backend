@@ -53,24 +53,50 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      lastName: {
-        allowNull: false,
+      email: {
+        allowNull: true,
         type: DataTypes.STRING,
-        field: 'last_name',
       },
       phone: {
         allowNull: true,
         type: DataTypes.STRING,
       },
-      email: {
-        allowNull: false,
+      address: {
+        allowNull: true,
         type: DataTypes.STRING,
-        unique: true,
+      },
+      birthday: {
+        allowNull: true,
+        type: DataTypes.DATE,
+      },
+      age: {
+        allowNull: true,
+        type: DataTypes.NUMBER,
+      },
+      dni: {
+        allowNull: true,
+        type: DataTypes.STRING,
       },
       certificate: {
         allowNull: true,
+        type: DataTypes.BOOLEAN,
+      },
+      status: {
+        allowNull: true,
         type: DataTypes.STRING,
-        defaultValue: false,
+      },
+      start: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: Sequelize.NOW,
+      },
+      end: {
+        allowNull: true,
+        type: DataTypes.DATE,
+      },
+      comment: {
+        allowNull: true,
+        type: DataTypes.STRING,
       },
       createdAt: {
         allowNull: false,

@@ -27,12 +27,6 @@ class CustomerService {
     const rta = await model.update(changes);
     return rta;
   }
-
-  async delete(id) {
-    const model = await this.findOne(id);
-    await model.destroy();
-    return { id };
-  }
 }
 
 module.exports = CustomerService;
