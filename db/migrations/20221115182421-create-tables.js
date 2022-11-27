@@ -71,7 +71,7 @@ module.exports = {
       },
       age: {
         allowNull: true,
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
       },
       dni: {
         allowNull: true,
