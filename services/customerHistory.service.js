@@ -1,17 +1,17 @@
 const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
-class CustomerService {
+class CustomerHistoryService {
   constructor() {}
 
   async find() {
-    const rta = await models.Customer.findAll();
+    const rta = await models.CustomerHistory.findAll();
     return rta;
   }
 
-  async findOne(id) {
-    const customer = await models.Customer.findByPk(id, {
-      include: ['customersHistory'],
+  async findOneByCustomer(id) {
+    const customer = await models.CustomerHistory.findAll({
+      where: { customer_id: id },
     });
     if (!customer) {
       throw boom.notFound('Cliente no encontrado');
@@ -19,8 +19,16 @@ class CustomerService {
     return customer;
   }
 
+  async findOne(id) {
+    const customer = await models.CustomerHistory.findByPk(id);
+    if (!customer) {
+      throw boom.notFound('Cliente no encontrado');
+    }
+    return customer;
+  }
+
   async create(data) {
-    const newCustomer = await models.Customer.create(data);
+    const newCustomer = await models.CustomerHistory.create(data);
     return newCustomer;
   }
 
@@ -37,4 +45,4 @@ class CustomerService {
   }
 }
 
-module.exports = CustomerService;
+module.exports = CustomerHistoryService;

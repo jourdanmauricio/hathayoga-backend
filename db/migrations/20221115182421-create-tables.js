@@ -50,8 +50,8 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       name: {
-        allowNull: false,
         type: DataTypes.STRING,
+        allowNull: false,
       },
       email: {
         allowNull: true,
@@ -74,8 +74,9 @@ module.exports = {
         type: DataTypes.INTEGER,
       },
       dni: {
-        allowNull: true,
         type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
       },
       certificate: {
         allowNull: true,
@@ -89,10 +90,6 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         defaultValue: Sequelize.NOW,
-      },
-      end: {
-        allowNull: true,
-        type: DataTypes.DATE,
       },
       comment: {
         allowNull: true,

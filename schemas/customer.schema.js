@@ -7,11 +7,11 @@ const phone = Joi.string().allow(null, '');
 const address = Joi.string().allow(null, '');
 const birthday = Joi.date().allow(null, '');
 const age = Joi.number().positive().allow(null, '');
-const dni = Joi.string().max(20).allow(null, '');
+const dni = Joi.string().max(20);
 const certificate = Joi.boolean().allow(null, '');
 const status = Joi.string().allow(null, '');
 const start = Joi.date().allow(null, '');
-const end = Joi.date().allow(null, '');
+// const end = Joi.date().allow(null, '');
 const comment = Joi.string().max(255).allow(null, '');
 
 const getCustomerSchema = Joi.object({
@@ -44,7 +44,7 @@ const updateCustomerSchema = Joi.object({
   status,
   certificate,
   start,
-  end,
+  // end,
   comment,
 });
 

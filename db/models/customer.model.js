@@ -31,11 +31,12 @@ const CustomerSchema = {
   },
   age: {
     allowNull: true,
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
   },
   dni: {
-    allowNull: true,
+    allowNull: false,
     type: DataTypes.STRING,
+    unique: true,
   },
   certificate: {
     allowNull: true,
@@ -49,10 +50,6 @@ const CustomerSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW,
-  },
-  end: {
-    allowNull: true,
-    type: DataTypes.DATE,
   },
   comment: {
     allowNull: true,
@@ -73,13 +70,17 @@ const CustomerSchema = {
 };
 
 class Customer extends Model {
-  // static associate(models) {
-  //   this.belongsTo(models.User, { as: 'user' });
-  //   this.hasMany(models.Order, {
-  //     as: 'orders',
-  //     foreignKey: 'customerId',
-  //   });
-  // }
+  static associate(models) {
+    // this.belongsTo(models.User, { as: 'user' });
+    // this.hasMany(models.Order, {
+    //    as: 'orders',
+    //    foreignKey: 'customerId',
+    //  });
+    this.hasMany(models.CustomerHistory, {
+      as: 'customersHistory',
+      foreignKey: 'customerId',
+    });
+  }
 
   static config(sequelize) {
     return {
