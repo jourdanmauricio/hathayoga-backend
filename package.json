@@ -15,7 +15,8 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "seeders:generate-admin": "sequelize seed:generate --name user-admin",
-    "seeders:run": "sequelize-cli db:seed:all"
+    "seeders:runAll": "sequelize-cli db:seed:all",
+    "seeders:run": "sequelize-cli db:seed"
   },
   "keywords": [],
   "author": "Mauricio Jourdán",
