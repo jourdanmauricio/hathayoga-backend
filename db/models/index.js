@@ -7,6 +7,7 @@ const {
 const { Lesson, LessonSchema } = require('./lesson.model');
 const { Subscriber, SubscriberSchema } = require('./subscriber.model');
 const { Comment, CommentSchema } = require('./comment.model');
+const { Setting, SettingSchema } = require('./setting.model');
 
 function setupModels(sequelize) {
   User.init(UserSchema, User.config(sequelize));
@@ -18,6 +19,7 @@ function setupModels(sequelize) {
   Lesson.init(LessonSchema, Lesson.config(sequelize));
   Subscriber.init(SubscriberSchema, Subscriber.config(sequelize));
   Comment.init(CommentSchema, Comment.config(sequelize));
+  Setting.init(SettingSchema, Setting.config(sequelize));
 
   Customer.associate(sequelize.models);
   CustomerHistory.associate(sequelize.models);

@@ -15,7 +15,6 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "seeders:generate-admin": "sequelize seed:generate --name user-admin",
-    "seeders:generate-superadmin": "sequelize seed:generate --name user-superadmin",
     "seeders:run": "sequelize-cli db:seed:all"
   },
   "keywords": [],
