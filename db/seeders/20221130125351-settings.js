@@ -5,42 +5,42 @@ module.exports = {
     return queryInterface.bulkInsert('settings', [
       {
         type: 'SOCIAL_MEDIA',
-        feture: 'Facebook',
+        feature: 'Facebook',
         value: '',
       },
       {
         type: 'SOCIAL_MEDIA',
-        feture: 'Twitter',
+        feature: 'Twitter',
         value: '',
       },
       {
         type: 'SOCIAL_MEDIA',
-        feture: 'Instagram',
+        feature: 'Instagram',
         value: '',
       },
       {
         type: 'CONTACT',
-        feture: 'email',
+        feature: 'email',
         value: '',
       },
       {
         type: 'CONTACT',
-        feture: 'phone',
+        feature: 'phone',
         value: '',
       },
       {
         type: 'STYLE',
-        feture: 'logo',
+        feature: 'logo',
         value: '',
       },
       {
         type: 'STYLE',
-        feture: 'title_color',
+        feature: 'title_color',
         value: '',
       },
       {
         type: 'STYLE',
-        feture: 'paragraph_color',
+        feature: 'paragraph_color',
         value: '',
       },
     ]);
