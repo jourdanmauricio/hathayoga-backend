@@ -19,6 +19,11 @@ module.exports = {
         value: '',
       },
       {
+        type: 'SOCIAL_MEDIA',
+        feature: 'Whatsapp',
+        value: '',
+      },
+      {
         type: 'CONTACT',
         feature: 'email',
         value: '',

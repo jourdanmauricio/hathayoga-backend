@@ -30,6 +30,9 @@ app.use(cors());
 
 require('./utils/auth');
 
+// Server Static Files
+app.use('/static', express.static('public'));
+
 app.get('/', (req, res) => {
   res.send('Hola mi server en Express');
 });

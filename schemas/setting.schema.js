@@ -3,13 +3,14 @@ const Joi = require('joi');
 const id = Joi.number().integer();
 const type = Joi.string();
 const feature = Joi.string();
-const value = Joi.string();
+const value = Joi.string().allow('');
 const comment = Joi.string();
+const data = Joi.object();
 
 const createSettingSchema = Joi.object({
   type: type.required(),
   feature: feature.required(),
-  value: value.required(),
+  value,
   comment,
 });
 
@@ -18,6 +19,7 @@ const updateSettingSchema = Joi.object({
   feature,
   value,
   comment,
+  data,
 });
 
 const getSettingSchema = Joi.object({

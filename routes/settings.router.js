@@ -6,8 +6,8 @@ const SettingService = require('./../services/setting.service');
 const validatorHandler = require('./../middlewares/validator.handler');
 const {
   updateSettingSchema,
-  // createSettingSchema,
-  getSettingSchema,
+  createSettingSchema,
+  // getSettingSchema,
 } = require('./../schemas/setting.schema');
 
 const router = express.Router();
@@ -43,16 +43,34 @@ router.get(
 //   }
 // );
 
-// router.post(
-//   '/',
+router.post(
+  '/',
+  passport.authenticate('jwt', { session: false }),
+  checkAdminRole,
+  validatorHandler(createSettingSchema, 'body'),
+  async (req, res, next) => {
+    try {
+      const body = req.body;
+      const newCategory = await service.create(body);
+      res.status(201).json(newCategory);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+// router.put(
+//   '/:id',
 //   passport.authenticate('jwt', { session: false }),
 //   checkAdminRole,
-//   validatorHandler(createUserSchema, 'body'),
+//   validatorHandler(getSettingSchema, 'params'),
+//   validatorHandler(updateSettingSchema, 'body'),
 //   async (req, res, next) => {
 //     try {
+//       const { id } = req.params;
 //       const body = req.body;
-//       const newCategory = await service.create(body);
-//       res.status(201).json(newCategory);
+//       const setting = await service.update(id, body);
+//       res.json(setting);
 //     } catch (error) {
 //       next(error);
 //     }
@@ -60,16 +78,14 @@ router.get(
 // );
 
 router.put(
-  '/:id',
+  '/',
   passport.authenticate('jwt', { session: false }),
   checkAdminRole,
-  validatorHandler(getSettingSchema, 'params'),
   validatorHandler(updateSettingSchema, 'body'),
   async (req, res, next) => {
     try {
-      const { id } = req.params;
-      const body = req.body;
-      const setting = await service.update(id, body);
+      const { data } = req.body;
+      const setting = await service.updateAll(data);
       res.json(setting);
     } catch (error) {
       next(error);
