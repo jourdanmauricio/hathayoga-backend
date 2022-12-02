@@ -31,8 +31,8 @@ const upload = multer({ storage: storage });
 
 router.get(
   '/',
-  passport.authenticate('jwt', { session: false }),
-  checkAdminRole,
+  // passport.authenticate('jwt', { session: false }),
+  // checkAdminRole,
   async (req, res, next) => {
     try {
       const settings = await service.find();
