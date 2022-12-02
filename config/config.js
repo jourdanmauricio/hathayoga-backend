@@ -20,6 +20,8 @@ const config = {
   superadminEmail: process.env.SUPERADMIN_EMAIL,
   superadminPass: process.env.SUPERADMIN_PASS,
   superadminRole: process.env.SUPERADMIN_ROLE,
+
+  domain: process.env.DOMAIN,
 };
 
 module.exports = { config };

@@ -1,4 +1,5 @@
 const express = require('express');
+
 const cors = require('cors');
 const routerApi = require('./routes');
 
@@ -13,7 +14,14 @@ const app = express();
 const port = 3000;
 
 // Middleware para recibir datos
+// json
 app.use(express.json());
+// files
+app.use(express.urlencoded({ extended: false }));
+
+// Server Static Files
+app.use('/static', express.static('public'));
+
 // aceptamos cualquier origen
 app.use(cors());
 // const whiteList = ['http://localhost:8080', 'https://yathayogaloberia.ga'];
@@ -29,9 +37,6 @@ app.use(cors());
 // app.use(cors(options));
 
 require('./utils/auth');
-
-// Server Static Files
-app.use('/static', express.static('public'));
 
 app.get('/', (req, res) => {
   res.send('Hola mi server en Express');
