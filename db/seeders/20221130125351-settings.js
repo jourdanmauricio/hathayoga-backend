@@ -10,12 +10,12 @@ module.exports = {
       },
       {
         type: 'SOCIAL_MEDIA',
-        feature: 'Twitter',
+        feature: 'Instagram',
         value: '',
       },
       {
         type: 'SOCIAL_MEDIA',
-        feature: 'Instagram',
+        feature: 'Twitter',
         value: '',
       },
       {
@@ -46,6 +46,77 @@ module.exports = {
       {
         type: 'STYLE',
         feature: 'paragraph_color',
+        value: '',
+      },
+
+      {
+        type: 'STYLE',
+        feature: 'button_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'divisor_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'effect_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'error_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'h1_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'paragraph_header_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'h1_font_size',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'h1_font_weight',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'paragraph_font_size',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'paragraph_font_weight',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'paragraph_header_size',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'paragraph_header_weight',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'title_font_size',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'title_font_weight',
         value: '',
       },
     ]);

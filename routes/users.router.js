@@ -51,8 +51,8 @@ router.post(
   async (req, res, next) => {
     try {
       const body = req.body;
-      const newCategory = await service.create(body);
-      res.status(201).json(newCategory);
+      const newUser = await service.create(body);
+      res.status(201).json(newUser);
     } catch (error) {
       next(error);
     }
@@ -69,8 +69,8 @@ router.put(
     try {
       const { id } = req.params;
       const body = req.body;
-      const category = await service.update(id, body);
-      res.json(category);
+      const user = await service.update(id, body);
+      res.json(user);
     } catch (error) {
       next(error);
     }

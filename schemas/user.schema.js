@@ -13,7 +13,7 @@ const createUserSchema = Joi.object({
 
 const updateUserSchema = Joi.object({
   role: role,
-  // password: password,
+  password: password,
 });
 
 const getUserSchema = Joi.object({
