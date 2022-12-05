@@ -119,6 +119,16 @@ module.exports = {
         feature: 'title_font_weight',
         value: '',
       },
+      {
+        type: 'STYLE',
+        feature: 'background_color',
+        value: '',
+      },
+      {
+        type: 'STYLE',
+        feature: 'background_footer_color',
+        value: '',
+      },
     ]);
   },
 
