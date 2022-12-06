@@ -22,6 +22,10 @@ const config = {
   superadminRole: process.env.SUPERADMIN_ROLE,
 
   domain: process.env.DOMAIN,
+
+  emailSend: process.env.EMAIL_SEND,
+  emailSendPass: process.env.EMAIL_SEND_PASS,
+  emailTo: process.env.EMAIL_TO,
 };
 
 module.exports = { config };

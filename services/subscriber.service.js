@@ -1,5 +1,7 @@
 const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
+const { config } = require('../config/config');
+const { transporter } = require('../config/mailer');
 
 class SubscriberService {
   constructor() {}
@@ -34,6 +36,21 @@ class SubscriberService {
     } else {
       rta = await models.Subscriber.create(data);
     }
+
+    // Send email
+    await transporter.sendMail({
+      from: `"Formulario de suscripción 👻" <${config.emailSend}>`, // sender address
+      // to: 'bar@example.com, baz@example.com', // list of receivers
+      to: config.emailTo, // list of receivers
+      subject: 'Nuevo Suscriptor en Hatha Yoga ✔', // Subject line
+      // text: 'Hello world?', // plain text body
+      html: `
+      <h2 style='text-align: center;'>Tienes un nuevo suscriptor!</h2>
+      <p>Nombre: ${rta.name}</p>
+      <p>Email: ${rta.email}</p>
+      `,
+    });
+
     return rta;
   }
 
