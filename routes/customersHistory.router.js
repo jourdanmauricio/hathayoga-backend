@@ -8,6 +8,7 @@ const validatorHandler = require('../middlewares/validator.handler');
 const {
   getCustomerHistorySchema,
   createCustomerHistorySchema,
+  updateCustomerHistorySchema,
 } = require('../schemas/customerHistory.schema');
 
 const router = express.Router();
@@ -53,6 +54,23 @@ router.post(
       const body = req.body;
       const newHistory = await service.create(body);
       res.status(201).json(newHistory);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.put(
+  '/:id',
+  passport.authenticate('jwt', { session: false }),
+  checkAdminRole,
+  validatorHandler(getCustomerHistorySchema, 'params'),
+  validatorHandler(updateCustomerHistorySchema, 'body'),
+  async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      const body = req.body;
+      res.status(200).json(await service.update(id, body));
     } catch (error) {
       next(error);
     }

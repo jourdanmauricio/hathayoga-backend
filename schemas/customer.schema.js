@@ -28,8 +28,7 @@ const createCustomerSchema = Joi.object({
   dni,
   status,
   certificate,
-  // start,
-  // end,
+  start,
   comment,
 });
 
