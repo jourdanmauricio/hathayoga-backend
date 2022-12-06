@@ -6,6 +6,7 @@ const validatorHandler = require('../middlewares/validator.handler');
 const {
   createSubscriberSchema,
   updateSubscriberSchema,
+  getSubscriberSchema,
 } = require('../schemas/subscriber.schema');
 
 const router = express.Router();
@@ -39,6 +40,19 @@ router.put(
 
       const lesson = await subscriberService.update(body);
       res.status(200).json(lesson);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.delete(
+  '/:id',
+  validatorHandler(getSubscriberSchema, 'params'),
+  async (req, res, next) => {
+    try {
+      const { id } = req.params;
+      res.status(200).json(await subscriberService.delete(id));
     } catch (error) {
       next(error);
     }

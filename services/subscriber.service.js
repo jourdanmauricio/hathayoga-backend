@@ -1,3 +1,4 @@
+const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
 class SubscriberService {
@@ -6,6 +7,14 @@ class SubscriberService {
   async find() {
     const rta = await models.Subscriber.findAll();
     return rta;
+  }
+
+  async findOne(id) {
+    const comment = await models.Subscriber.findByPk(id);
+    if (!comment) {
+      throw boom.notFound('Suscriptor no encontrado');
+    }
+    return comment;
   }
 
   async findByEmail(email) {
@@ -33,6 +42,12 @@ class SubscriberService {
     data.status = 'Baja';
     const rta = await suscriber.update(data);
     return rta;
+  }
+
+  async delete(id) {
+    const model = await this.findOne(id);
+    await model.destroy();
+    return { id };
   }
 }
 
