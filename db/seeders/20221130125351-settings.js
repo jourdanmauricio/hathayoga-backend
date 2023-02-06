@@ -5,129 +5,115 @@ module.exports = {
     return queryInterface.bulkInsert('settings', [
       {
         type: 'SOCIAL_MEDIA',
-        feature: 'Facebook',
-        value: '',
+        feature: 'facebook',
+        value: 'https://www.facebook.com/hathayogaloberia/',
       },
       {
         type: 'SOCIAL_MEDIA',
-        feature: 'Instagram',
-        value: '',
+        feature: 'instagram',
+        value: 'https://www.instagram.com/hathayogaloberia/',
       },
       {
         type: 'SOCIAL_MEDIA',
-        feature: 'Twitter',
+        feature: 'twitter',
         value: '',
       },
       {
-        type: 'SOCIAL_MEDIA',
-        feature: 'Whatsapp',
-        value: '',
+        type: 'CONTACT',
+        feature: 'whatsapp',
+        value:
+          'https://wa.me/5492262470952?text=Hola, quiero recibir información',
       },
       {
         type: 'CONTACT',
         feature: 'email',
-        value: '',
+        value: 'hathayogaloberia@gmail.com',
       },
       {
         type: 'CONTACT',
         feature: 'phone',
-        value: '',
+        value: '(02262) 470952',
       },
       {
-        type: 'STYLE',
-        feature: 'logo',
-        value: '',
+        type: 'CONTACT',
+        feature: 'address',
+        value: 'Moreno 20, Lobería. CP: 7635',
       },
       {
         type: 'STYLE',
         feature: 'title_color',
-        value: '',
+        value: '#531253',
       },
       {
         type: 'STYLE',
         feature: 'paragraph_color',
-        value: '',
+        value: '#121212',
       },
 
       {
         type: 'STYLE',
         feature: 'button_color',
-        value: '',
+        value: '#531253',
       },
       {
         type: 'STYLE',
         feature: 'divisor_color',
-        value: '',
+        value: '#531253',
       },
       {
         type: 'STYLE',
         feature: 'effect_color',
-        value: '',
+        value: '#531253',
       },
       {
         type: 'STYLE',
         feature: 'error_color',
-        value: '',
+        value: 'ff0000',
       },
       {
         type: 'STYLE',
         feature: 'h1_color',
-        value: '',
+        value: '#ffffff',
       },
       {
         type: 'STYLE',
         feature: 'paragraph_header_color',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'h1_font_size',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'h1_font_weight',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'paragraph_font_size',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'paragraph_font_weight',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'paragraph_header_size',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'paragraph_header_weight',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'title_font_size',
-        value: '',
-      },
-      {
-        type: 'STYLE',
-        feature: 'title_font_weight',
-        value: '',
+        value: '#ffffff',
       },
       {
         type: 'STYLE',
         feature: 'background_color',
-        value: '',
+        value: '#eaeaea',
       },
       {
         type: 'STYLE',
         feature: 'background_footer_color',
-        value: '',
+        value: '#fafafa',
+      },
+      {
+        type: 'STYLE',
+        feature: 'table_header_color',
+        value: '#fafafa',
+      },
+      {
+        type: 'STYLE',
+        feature: 'table_header_text_color',
+        value: '#fafafa',
+      },
+      {
+        type: 'STYLE',
+        feature: 'table_body_color',
+        value: '#fafafa',
+      },
+      {
+        type: 'STYLE',
+        feature: 'table_border_color',
+        value: '#fafafa',
+      },
+      {
+        type: 'STYLE',
+        feature: 'table_body_text_color',
+        value: '#fafafa',
       },
     ]);
   },

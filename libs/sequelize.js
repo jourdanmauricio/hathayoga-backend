@@ -3,17 +3,9 @@ const { Sequelize } = require('sequelize');
 const { config } = require('./../config/config');
 const setupModels = require('./../db/models');
 
-const USER = encodeURIComponent(config.dbUser);
-const PASSWORD = encodeURIComponent(config.dbPassword);
-const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
-
-// const sequelize = new Sequelize(URI, {
-//   dialect: 'postgres',
-//   logging: false,
-// });
-
 const options = {
-  dialect: 'postgres',
+  dialect: 'sqlite',
+  storage: './db/hathayoga.sqlite',
   logging: config.isProd ? false : console.log,
 };
 
@@ -25,7 +17,7 @@ if (config.isProd) {
   };
 }
 
-const sequelize = new Sequelize(URI, options);
+const sequelize = new Sequelize('hathayoga', 'user', 'pass', options);
 
 setupModels(sequelize);
 
